@@ -4,6 +4,9 @@ class Calculator
         if numbers.empty?
             return 0
         end
+        if numbers.include?("\n")
+            numbers.gsub!("\n", ",")
+        end
         numbers = numbers.split(",")
         # Check if the input is a single number
         if numbers.length == 1

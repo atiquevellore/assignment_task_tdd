@@ -24,5 +24,9 @@ RSpec.describe Calculator do
         it  "Expecting method to handle multiple numbers" do
             expect(Calculator.add("1,2,3,4,5,6,7,8,9,10,11")).to eq(66)
         end
+
+        it "Expecting method to handle new line as delimiter" do
+            expect(Calculator.add("1\n2,3")).to eq(6)
+        end
     end
 end
