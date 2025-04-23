@@ -12,5 +12,9 @@ RSpec.describe Calculator do
         it "Expecting method function add to return 0 when empty string is passed" do
             expect(Calculator.add("")).to eq(0)
         end
+
+        it " Expecting method function to return 1 when 1 is passed" do
+            expect(Calculator.add("1")).to eq(1)
+        end
     end
 end
