@@ -14,6 +14,9 @@ class Calculator
             delimiter = Regexp.escape(numbers.match(delimiter_pattern)[1])
             numbers = numbers.sub(delimiter_pattern, '')             # Remove the delimiter declaration part (e.g., "//;\n")
             numbers = numbers.gsub(/#{delimiter}/, ',')              # Replace all occurrences of the custom delimiter with commas
+        else
+            # Replace new line characters with commas
+            numbers = numbers.gsub("\n", ",")
         end
         numbers = numbers.split(",")
         # Check if the input is a single number
