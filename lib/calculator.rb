@@ -7,7 +7,11 @@ class Calculator
         if numbers.empty?
             return 0
         end
-
+        # handle negative numbers
+        negative_numbers = numbers.scan(/-\d+/)
+        unless negative_numbers.empty?
+          raise "Negative numbers not allowed: #{negative_numbers.join(', ')}"
+        end
         
         if numbers.match?(delimiter_pattern)
             # Extracts  the custom delimiter and escape it to handle special regex characters like ., *, |

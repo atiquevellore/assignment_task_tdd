@@ -32,5 +32,9 @@ RSpec.describe Calculator do
         it "Expecting method to handle custom delimiter" do
             expect(Calculator.add("//;\n1;2")).to eq(3)
         end
+
+        it "Expecting method to throw an error for negative numbers" do
+            expect { Calculator.add("1,-2,3") }.to raise_error(RuntimeError, "Negative numbers not allowed: -2")
+        end
     end
 end
