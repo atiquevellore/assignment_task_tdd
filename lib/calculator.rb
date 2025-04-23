@@ -9,5 +9,8 @@ class Calculator
         if numbers.length == 1
             return numbers[0].to_i
         end
+        sum = 0 
+        numbers.each { |number|  sum+= number.to_i }
+        return sum
     end
 end

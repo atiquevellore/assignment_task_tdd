@@ -16,5 +16,13 @@ RSpec.describe Calculator do
         it " Expecting method function to return 1 when 1 is passed" do
             expect(Calculator.add("1")).to eq(1)
         end
+
+        it "Expecting method function to return 6 when 1,5 is passed" do
+            expect(Calculator.add("1,5")).to eq(6)
+        end
+
+        it  "Expecting method to handle multiple numbers" do
+            expect(Calculator.add("1,2,3,4,5,6,7,8,9,10,11")).to eq(66)
+        end
     end
 end
